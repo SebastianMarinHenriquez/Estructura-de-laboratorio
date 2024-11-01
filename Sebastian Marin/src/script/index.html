@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Estructura de laboratorio</h1>
+    <button id="pedirNumero">Calificaciones</button>
+    <button id="pedirNumeroPar">Numero PAR/INPAR</button>
+    <button id="PedirDescuerto">Ingresa el total de su compra</button>
+    <p id="mostrarNumero"></p>
+    
+    <script>
+        let numero;
+        let menu = 0;
+
+        document.getElementById('pedirNumero').addEventListener('click', function() {
+            numero = prompt("Escriba un numero del 1 al 100");
+            if (numero > 0 && numero < 101) {
+                if (numero >= 90) {
+                    document.getElementById('mostrarNumero').textContent = "Usted a aprobado!!!";
+                }else{
+                    if (numero >= 70) {
+                        document.getElementById('mostrarNumero').textContent = "Aprobado :D";
+                    }else{
+                        document.getElementById('mostrarNumero').textContent = "Estas reprobado bro :( ";
+                    }
+                }
+            }else{
+                document.getElementById('mostrarNumero').textContent = "El sumero es incorrecto!!!";
+            }     
+        });    
+
+        document.getElementById('pedirNumeroPar').addEventListener('click', function() {
+            numero = prompt("Escriba un numero cualquiera");
+            if (numero % 2 == 0) {
+                document.getElementById('mostrarNumero').textContent = "El numero es PAR";
+            }else{
+                document.getElementById('mostrarNumero').textContent = "El numero es INPAR";
+            }    
+        });   
+
+        document.getElementById('PedirDescuerto').addEventListener('click', function() {
+            numero = prompt("Ingrese su monto total");
+            if (numero > 100) {
+                numero = numero - (numero * 0.1);
+                document.getElementById('mostrarNumero').textContent = "Obtuvo un descuento!!! Su monto a pagar es: "+numero;
+            }else{
+                document.getElementById('mostrarNumero').textContent = "No tuvo un despuesto, su monto a pagar es: "+numero;
+            }    
+        });   
+        
+    </script>
+    
+</body>
+</html>
